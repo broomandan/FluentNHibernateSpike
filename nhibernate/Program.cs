@@ -18,6 +18,7 @@ namespace nhibernateSpike
         private static void Main(string[] args)
         {
             CreateAndPopulateDb();
+            Console.ReadLine();
         }
 
         private static void CreateAndPopulateDb()
@@ -27,11 +28,11 @@ namespace nhibernateSpike
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    var pa = new Product() {Name = "Fantastic product"};
+                    var pa = new Product() { Name = "Fantastic product" };
 
-                    var webApplication = new Application {Name = "Web application", Type = ApplicationType.Web};
-                    var windowsService = new Application {Name = "service application", Type = ApplicationType.Service};
-                    var winformApplication = new Application {Name = "Windows form application", Type = ApplicationType.WinForm};
+                    var webApplication = new Application { Name = "Web application", Type = ApplicationType.Web };
+                    var windowsService = new Application { Name = "service application", Type = ApplicationType.Service };
+                    var winformApplication = new Application { Name = "Windows form application", Type = ApplicationType.WinForm };
 
                     var host1 = new Host
                     {

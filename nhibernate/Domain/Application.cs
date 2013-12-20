@@ -25,8 +25,8 @@ namespace nhibernateSpike.Domain
 
     public enum ApplicationType
     {
-        Web,
-        WinForm,
-        Service
+        Web = 1,
+        WinForm = 2,
+        Service = 3
     }
 }
