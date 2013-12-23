@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 using nhibernateSpike.Domain;
 
 namespace nhibernateSpike.Mappings
@@ -18,10 +13,8 @@ namespace nhibernateSpike.Mappings
             Map(x => x.UpdateStatus);
             Map(x => x.UpdateNotes);
 
-            HasOne(x => x.Host)
-                .Cascade
-                .All();
-
+            References(x => x.Host)
+                .Cascade.SaveUpdate();
             References(x => x.Application);
         }
     }

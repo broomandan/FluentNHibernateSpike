@@ -12,12 +12,13 @@ namespace nhibernateSpike.Mappings
             Map(x => x.ProcessorCount);
             Map(x => x.Is64BitProcess);
             Map(x => x.OsVersion);
+            Map(x => x.Platform);
             Map(x => x.Is64BitOperatingSystem);
             Map(x => x.ClrVersion);
             Map(x => x.UserName);
 
-            References(x => x.ApplicationInstance)
-                .Unique();
+            HasMany(x => x.ApplicationInstances)
+                .Inverse();
         }
     }
 }
